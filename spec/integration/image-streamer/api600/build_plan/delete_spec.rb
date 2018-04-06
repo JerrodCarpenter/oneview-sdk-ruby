@@ -29,7 +29,7 @@ RSpec.describe klass, integration_i3s: true, type: DELETE, sequence: i3s_rseq(kl
       expect { item.delete }.not_to raise_error
       expect(item.retrieve!).to eq(false)
       expect { item2.delete }.not_to raise_error
-      expect(item2.retrieve!).to eq(false)      
+      expect(item2.retrieve!).to eq(false)
       expect { item3.delete }.not_to raise_error
       expect(item3.retrieve!).to eq(false)
       expect { item4.delete }.not_to raise_error
