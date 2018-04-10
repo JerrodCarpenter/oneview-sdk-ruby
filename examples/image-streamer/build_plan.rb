@@ -18,7 +18,7 @@ require_relative '../_client_i3s' # Gives access to @client
 # api_version = 500 & variant = Synergy to OneviewSDK::ImageStreamer::API500::BuildPlan
 # api_version = 600 & variant = Synergy to OneviewSDK::ImageStreamer::API600::BuildPlan
 
-# Example: Create a build plan for an API300 Image Streamer
+# Example: Create a build plan for an Image Streamer
 # NOTE: This will create three build plans with the following names 'Build_Plan_1', 'Build_Plan_2' and 'Build_Plan_3', then delete them.
 # NOTE: You'll need to add the following instance variables to the _client.rb file with valid URIs for your environment:
 #   @plan_script1_name
@@ -43,7 +43,6 @@ plan_script2.create!
 plan_script2.retrieve!
 puts "\n#Plan script with name #{plan_script2['name']} and uri #{plan_script2['uri']} created successfully."
 
-# plan_script2 = plan_script_class.find_by(@client, name: @plan_script2_name).first
 custom_attributes = JSON.parse(plan_script2['customAttributes'])
 
 custom_attributes.replace([custom_attributes[0].merge('type' => 'String')])
@@ -126,7 +125,7 @@ puts "\n#Build Plan updated successfully with id #{item5['uri']} and new name #{
 puts "\n#Removing a build plan with id #{item2['uri']} and name #{item2['name']}:"
 item2.delete
 puts "\n#Build plan with id #{item2['uri']} and name #{item2['name']} removed successfully."
-puts "\n#Removing a build plan with id #{plan_script2['uri']} and name #{plan_script2['name']}:"
+puts "\n#Removing a plan script with id #{plan_script2['uri']} and name #{plan_script2['name']}:"
 plan_script2.delete
 puts "\n#Plan script with id #{plan_script2['uri']} and name #{plan_script2['name']} removed successfully."
 puts "\n#Removing a build plan with id #{item3['uri']} and name #{item3['name']}:"
